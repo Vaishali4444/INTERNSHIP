@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Resume Builder</title>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Resume Builder</h1>
+
+        <!-- Form for Personal Information -->
+        <form id="personalInfoForm">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" required>
+            
+            <!-- Add more fields for personal information -->
+
+            <button type="button" onclick="previewResume()">Preview</button>
+        </form>
+
+        <!-- Preview Section -->
+        <div id="previewSection">
+            <h2>Preview</h2>
+            <div id="previewContent"></div>
+            <button onclick="downloadResume()">Download Resume</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+#previewSection {
+    display: none;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+function previewResume() {
+    // Get form data and create a preview
+    const fullName = document.getElementById('fullName').value;
+    
+    // Add more fields as needed for the preview
+    
+    const previewContent = `
+        <p><strong>Full Name:</strong> ${fullName}</p>
+        <!-- Add more fields for the preview -->
+    `;
+
+    // Display the preview
+    document.getElementById('previewContent').innerHTML = previewContent;
+    document.getElementById('previewSection').style.display = 'block';
+}
+
+function downloadResume() {
+    // Implement download functionality (e.g., generate a PDF or Word document)
+    alert('Downloading resume...');
+    // Add code for downloading resume
+}
